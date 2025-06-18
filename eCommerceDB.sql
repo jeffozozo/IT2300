@@ -22,6 +22,8 @@ CREATE TABLE Customer (
     Email VARCHAR(255),
     ShippingAddress INT,
     BillingAddress INT,
+	Username VARCHAR(100),
+	Password VARCHAR(100),
     FOREIGN KEY (ShippingAddress) REFERENCES Address(AddressID),
     FOREIGN KEY (BillingAddress) REFERENCES Address(AddressID)
 );
