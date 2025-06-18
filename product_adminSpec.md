@@ -47,9 +47,8 @@ The interface supports editing the following fields in the `Product` table:
 
 - Clicking “Delete” prompts a confirmation dialog.
 - If confirmed, deletes the product from the database.
-- If the product is part of any existing orders, the deletion should either:
-  - Be restricted with a warning message, or
-  - Cascade according to the database’s foreign key rules (implementation-dependent)
+- If the product is part of any existing orders, the product cannot be deleted.
+- this implies that the product has a 'status' like active or inactive. (TODO)
 
 ### 5. Search and Filter
 
