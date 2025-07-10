@@ -30,21 +30,19 @@ The interface supports editing the following fields in the `Product` table:
   - `Description` (multi-line textarea)
   - `Price` (decimal input, required)
   - `Cost` (decimal input, required)
-- A “Save” button submits the form and inserts the product into the database.
+- The "Create" button submits the form and inserts the product into the database.
 
 ### 3. Edit Product
 
 - Clicking “Edit” on a product row opens a form pre-filled with the product’s current data.
 - Editable fields: `Name`, `Description`, `Price`, `Cost`
 - `ProductID` is displayed but not editable.
-- “Save Changes” updates the record in the database.
+- “Update” updates the record in the database.
 
 ### 4. Delete Product
 
-- Clicking “Delete” prompts a confirmation dialog.
-- If confirmed, deletes the product from the database.
-- If the product is part of any existing orders, the product cannot be deleted.
-- this implies that the product has a 'status' like active or inactive. (TODO)
+- Clicking “Delete” immediately deletes the item. There is no confirm dialog.
+- Delete will not work (it causes an integrity error with the DB) if the Product you are trying to delete is part of an Order. If you are really serious about deleting that product, you can manually delete all instances of it from the  Order_Product table.
 
 
 ### DB Assumptions
