@@ -1,13 +1,8 @@
-# Admin Product Management Page Specification
+# Admin Product Management Assignment Specification
 
 ## Overview
 
 This admin-only interface allows authorized users to perform full CRUD (Create, Read, Update, Delete) operations on products stored in the `Product` table of the `eCommerceDB` database.
-
-## Access Control
-
-- This page should only be accessible to users with admin privileges (access control is assumed to be handled elsewhere).
-- Unauthorized users should be redirected to a login page or an access-denied screen.
 
 ## Product Table Structure
 
@@ -23,8 +18,9 @@ The interface supports editing the following fields in the `Product` table:
 
 ### 1. View All Products
 
-- Display all products in a paginated table.
-- Each row displays: `ProductID`, `Name`, `Price`, `Cost`, and a truncated `Description`.
+- This is the default page behavior - implemented in index.html
+- Displays all products in a table.
+- Each row displays: `ProductID`, `Name`, `Price`, `Cost`, and a `Description`.
 - Each row includes “Edit” and “Delete” buttons.
 
 ### 2. Add New Product
@@ -50,26 +46,8 @@ The interface supports editing the following fields in the `Product` table:
 - If the product is part of any existing orders, the product cannot be deleted.
 - this implies that the product has a 'status' like active or inactive. (TODO)
 
-### 5. Search and Filter
 
-- A search bar allows admins to filter products by:
-  - Product name
-  - Price range (optional)
-- Results update in real-time or on form submission.
-
-## Validation Rules
-
-- `Name` must not be empty.
-- `Price` and `Cost` must be valid decimals ≥ 0.
-- `Price` should not be less than `Cost` (warn but allow if necessary).
-
-## Layout Suggestions
-
-- Use a table or grid layout for product listings.
-- Use modal dialogs or a side panel for edit/create forms.
-- Include success/error messages for all operations.
-
-## Database Assumptions
+### DB Assumptions
 
 This page interacts with the following schema:
 
@@ -81,3 +59,7 @@ CREATE TABLE Product (
     Price DECIMAL(10,2) NOT NULL,
     Cost DECIMAL(10,2) NOT NULL
 );
+
+### Assignment Activities
+
+1. Add the code to select all the products from the product table. Edit the app.py file 
