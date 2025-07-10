@@ -59,6 +59,7 @@ CREATE TABLE Product (
     Price DECIMAL(10,2) NOT NULL,
     Cost DECIMAL(10,2) NOT NULL
 );
+```
 
 ### Assignment Activities
 
