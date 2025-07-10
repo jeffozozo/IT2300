@@ -1,13 +1,13 @@
 ### GUI for Editing Products in the Product Table
 This simple application allows you to edit the items in the product table. It assumes the product table exists and follows the format:
 
-CREATE TABLE Product (
-    ProductID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(255) NOT NULL,
-    Description TEXT,
-    Price DECIMAL(10,2) NOT NULL,
-    Cost DECIMAL(10,2) NOT NULL
-);
+
+    - ProductID INT AUTO_INCREMENT PRIMARY KEY
+    - Name VARCHAR(255) NOT NULL
+    - Description TEXT
+    - Price DECIMAL(10,2) NOT NULL
+    - Cost DECIMAL(10,2) NOT NULL
+
 
 It is a simple flask app with very bare-bones html templates. This is so that students can see exactly what is going on with the app code and with the templates. 
 
