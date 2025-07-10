@@ -1,0 +1,25 @@
+<h1>Product Table Editor</h1>
+<a href="/create">Add Product</a>
+<table border="1" cellpadding="5" cellspacing="0">
+  <tr>
+    <th>ProductID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Cost</th>
+    <th>Actions</th>
+  </tr>
+  {% for product in products %}
+    <tr>
+      <td>{{ product.ProductID }}</td>
+      <td>{{ product.Name }}</td>
+      <td>{{ product.Description }}</td>
+      <td>${{ product.Price }}</td>
+      <td>${{ product.Cost }}</td>
+      <td>
+        <a href="/edit/{{ product.ProductID }}">Edit</a> |
+        <a href="/delete/{{ product.ProductID }}">Delete</a>
+      </td>
+    </tr>
+  {% endfor %}
+</table>

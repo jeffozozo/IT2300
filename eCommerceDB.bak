@@ -6,24 +6,24 @@ USE eCommerceDB;
 -- Address table
 CREATE TABLE Address (
     AddressID INT AUTO_INCREMENT PRIMARY KEY,
-    Street1 VARCHAR(255) NOT NULL,
-    Street2 VARCHAR(255) NOT NULL,
-    City VARCHAR(100) NOT NULL,
-    State VARCHAR(100) NOT NULL,
-    Zip VARCHAR(20) NOT NULL
+    Street1 VARCHAR(255),
+    Street2 VARCHAR(255),
+    City VARCHAR(100),
+    State VARCHAR(100),
+    Zip VARCHAR(20)
 );
 
 -- Customer table
 CREATE TABLE Customer (
     CustomerID INT AUTO_INCREMENT PRIMARY KEY,
-    FirstName VARCHAR(100) NOT NULL,
-    LastName VARCHAR(100) NOT NULL,
-    Phone VARCHAR(20) NOT NULL,
-    Email VARCHAR(255) NOT NULL,
-    ShippingAddress INT NOT NULL,
-    BillingAddress INT NOT NULL,
-    Username VARCHAR(100) UNIQUE NOT NULL,
-    Password VARCHAR(100) NOT NULL,
+    FirstName VARCHAR(100),
+    LastName VARCHAR(100),
+    Phone VARCHAR(20),
+    Email VARCHAR(255),
+    ShippingAddress INT,
+    BillingAddress INT,
+	Username VARCHAR(100) UNIQUE,
+	Password VARCHAR(100),
     FOREIGN KEY (ShippingAddress) REFERENCES Address(AddressID),
     FOREIGN KEY (BillingAddress) REFERENCES Address(AddressID)
 );
@@ -32,25 +32,25 @@ CREATE TABLE Customer (
 CREATE TABLE `Order` (
     OrderID INT AUTO_INCREMENT PRIMARY KEY,
     CustomerID INT NOT NULL,
-    OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    OrderTotalAmount DECIMAL(10,2) NOT NULL,
-    Quantity INT NOT NULL,
+    OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    OrderTotalAmount DECIMAL(10,2),
+    Quantity INT,
     FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 );
 
 -- Product table
 CREATE TABLE Product (
     ProductID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(255) NOT NULL,
-    Description TEXT NOT NULL,
-    Price DECIMAL(10,2) NOT NULL,
-    Cost DECIMAL(10,2) NOT NULL
+    Name VARCHAR(255),
+    Description TEXT,
+    Price DECIMAL(10,2),
+    Cost DECIMAL(10,2)
 );
 
 -- Order_Product join table
 CREATE TABLE Order_Product (
-    OrderID INT NOT NULL,
-    ProductID INT NOT NULL,
+    OrderID INT,
+    ProductID INT,
     PRIMARY KEY (OrderID, ProductID),
     FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
@@ -59,16 +59,16 @@ CREATE TABLE Order_Product (
 -- Warehouse table
 CREATE TABLE Warehouse (
     WarehouseID INT AUTO_INCREMENT PRIMARY KEY,
-    Name VARCHAR(255) NOT NULL,
-    Address INT NOT NULL,
+    Name VARCHAR(255),
+    Address INT,
     FOREIGN KEY (Address) REFERENCES Address(AddressID)
 );
 
 -- Inventory table (tracks stock by product and warehouse)
 CREATE TABLE Inventory (
-    ProductID INT NOT NULL,
-    WarehouseID INT NOT NULL,
-    Quantity INT NOT NULL,
+    ProductID INT,
+    WarehouseID INT,
+    Quantity INT,
     PRIMARY KEY (ProductID, WarehouseID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID),
     FOREIGN KEY (WarehouseID) REFERENCES Warehouse(WarehouseID)
