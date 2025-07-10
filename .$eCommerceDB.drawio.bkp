@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="NSgC2t2yWB4aycB6YQ8Y-1" value="Customer" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="40" y="80" width="200" height="240" as="geometry" />
+          <mxGeometry x="40" y="80" width="200" height="300" as="geometry" />
         </mxCell>
         <mxCell id="NSgC2t2yWB4aycB6YQ8Y-2" value="CustomerID - PK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
           <mxGeometry y="30" width="200" height="30" as="geometry" />
@@ -22,11 +22,17 @@
         <mxCell id="NSgC2t2yWB4aycB6YQ8Y-7" value="email" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
           <mxGeometry y="150" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NSgC2t2yWB4aycB6YQ8Y-8" value="ShippingAddress - FK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
+        <mxCell id="ak0cmdxBbd1NjXHZ5igM-2" value="Username" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="NSgC2t2yWB4aycB6YQ8Y-1">
           <mxGeometry y="180" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="NSgC2t2yWB4aycB6YQ8Y-9" value="BillingAddress - FK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
+        <mxCell id="ak0cmdxBbd1NjXHZ5igM-1" value="Password" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="NSgC2t2yWB4aycB6YQ8Y-1">
           <mxGeometry y="210" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NSgC2t2yWB4aycB6YQ8Y-8" value="ShippingAddress - FK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
+          <mxGeometry y="240" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NSgC2t2yWB4aycB6YQ8Y-9" value="BillingAddress - FK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="NSgC2t2yWB4aycB6YQ8Y-1" vertex="1">
+          <mxGeometry y="270" width="200" height="30" as="geometry" />
         </mxCell>
         <mxCell id="NSgC2t2yWB4aycB6YQ8Y-10" value="Order" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="300" y="80" width="140" height="180" as="geometry" />
@@ -129,7 +135,7 @@
             <mxPoint x="430" y="390" as="sourcePoint" />
             <mxPoint x="480" y="340" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="270" y="340" />
+              <mxPoint x="280" y="350" />
             </Array>
           </mxGeometry>
         </mxCell>

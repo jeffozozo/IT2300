@@ -32,9 +32,8 @@ CREATE TABLE Customer (
 CREATE TABLE `Order` (
     OrderID INT AUTO_INCREMENT PRIMARY KEY,
     CustomerID INT NOT NULL,
-    OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    OrderDate DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     OrderTotalAmount DECIMAL(10,2) NOT NULL,
-    Quantity INT NOT NULL,
     FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 );
 
@@ -51,6 +50,7 @@ CREATE TABLE Product (
 CREATE TABLE Order_Product (
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
+    Quantity INT NOT NULL,
     PRIMARY KEY (OrderID, ProductID),
     FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID),
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
