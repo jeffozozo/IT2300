@@ -20,7 +20,8 @@ def get_db_connection():
 def index():
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM Product")
+    sql = "SELECT * FROM Product"
+    cursor.execute(sql)
     products = cursor.fetchall()
     cursor.close()
     db.close()
@@ -39,10 +40,8 @@ def create():
         cost = request.form['cost']
         db = get_db_connection()
         cursor = db.cursor()
-        cursor.execute(
-            "INSERT INTO Product (Name, Description, Price, Cost) VALUES (%s, %s, %s, %s)",
-            (name, description, price, cost)
-        )
+        sql = "INSERT INTO Product (Name, Description, Price, Cost) VALUES ('%s', '%s', %s, %s)" % (name, description, price, cost) 
+        cursor.execute(sql)
         db.commit()
         cursor.close()
         db.close()
@@ -55,20 +54,23 @@ def create():
 def edit(product_id):
     db = get_db_connection()
     cursor = db.cursor(dictionary=True)
+
+    #if POST that means we're responding to a form submit, get the values out of the body.
     if request.method == 'POST':
         name = request.form['name']
         description = request.form['description']
         price = request.form['price']
         cost = request.form['cost']
-        cursor.execute(
-            "UPDATE Product SET Name = %s, Description = %s, Price = %s, Cost = %s WHERE ProductID = %s",
-            (name, description, price, cost, product_id)
-        )
+        sql = "UPDATE Product SET Name = '%s', Description = '%s', Price = %s, Cost = %s WHERE ProductID = %s" % (name, description, price, cost, product_id) 
+        cursor.execute(sql)
         db.commit()
         cursor.close()
         db.close()
         return redirect('/')
-    cursor.execute("SELECT * FROM Product WHERE ProductID = %s", (product_id,))
+    
+    # if not POST, then we're doing a regular GET to populate the form.
+    sql = "SELECT * FROM Product WHERE ProductID = %s" % (product_id,)
+    cursor.execute(sql)
     product = cursor.fetchone()
     cursor.close()
     db.close()
@@ -79,7 +81,8 @@ def edit(product_id):
 def delete(product_id):
     db = get_db_connection()
     cursor = db.cursor()
-    cursor.execute("DELETE FROM Product WHERE ProductID = %s", (product_id,))
+    sql = "DELETE FROM Product WHERE ProductID = %s" % (product_id,)
+    cursor.execute(sql)
     db.commit()
     cursor.close()
     db.close()
