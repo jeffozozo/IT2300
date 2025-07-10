@@ -29,8 +29,8 @@ def index():
 
 
 # handle a create request
-# note - the form is filled out by the user in the html
-# the field names in the form are in the ['name'] things. Look at the html to see the match...
+# note - the form is filled out by the user and when it is POSTed, this function gets called.
+# compare the html in the create.html template with the names of the fields here.
 @app.route('/create', methods=['GET', 'POST'])
 def create():
     if request.method == 'POST':
@@ -46,6 +46,8 @@ def create():
         cursor.close()
         db.close()
         return redirect('/')
+    
+    # if it's not a POST, just render the form.
     return render_template('create.html')
 
 
