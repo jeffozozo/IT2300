@@ -1,6 +1,6 @@
 # eCommerce Database Project - IT2300
 ---
-This project is designed to help students learn how to integrate database queries with a simple web backend. It is completely open source, free to use and free to modify and distribute. No warranty whatsoever. Enjoy!
+### This project is designed to help students learn how to integrate database queries with a simple web backend. It is completely open source, free to use and free to modify and distribute. No warranty whatsoever. Enjoy!
 ---
 Contents:
 1. eCommerceDB.drawio - an Entity Relationship Diagram (editable in draw.io)
