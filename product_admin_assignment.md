@@ -2,7 +2,7 @@
 
 ## Overview
 
-This admin-only interface allows authorized users to perform full CRUD (Create, Read, Update, Delete) operations on products stored in the `Product` table of the `eCommerceDB` database.
+This admin-only interface allows users to perform full CRUD (Create, Read, Update, Delete) operations on products stored in the `Product` table of the `eCommerceDB` database.
 
 ## Product Table Structure
 
@@ -19,13 +19,13 @@ The interface supports editing the following fields in the `Product` table:
 ### 1. View All Products
 
 - This is the default page behavior - implemented in index.html
-- Displays all products in a table.
+- Displays all products in the table.
 - Each row displays: `ProductID`, `Name`, `Price`, `Cost`, and a `Description`.
-- Each row includes “Edit” and “Delete” buttons.
+- Each row includes “Edit” and “Delete” links.
 
 ### 2. Add New Product
 
-- A “Create New Product” button opens a form with the following fields:
+- A “Create New Product” link opens a form with the following fields:
   - `Name` (input text, required)
   - `Description` (multi-line textarea)
   - `Price` (decimal input, required)
